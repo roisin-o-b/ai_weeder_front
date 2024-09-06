@@ -53,15 +53,15 @@ if uploaded_file is not None:
 
 
             # Make API request
-            api_url = ''
+            api_url = 'http://localhost:8000/upload_image'
             # Send the image to the API
-            response = requests.post(api_url, files={'file': img_bytes})
+            response = requests.post(api_url, files={'img': img_bytes})
 
             if response.status_code == 200:
                 result = response.json()
                 predicted_class_label = result.get('predicted_class')
                 probability = result.get('probability')
-
+                st.write(result)
                 # Display the prediction
                 st.write(f"**Predicted Plant:** {predicted_class_label}")
                 st.write(f"**Probability:** {probability:.2f}")
