@@ -97,7 +97,7 @@ if uploaded_file is not None:
 
 
             # Make API request
-            api_url = 'http://localhost:8000/upload_image'
+            api_url = 'https://aiweeder-1080691208206.europe-west1.run.app/'
             # Send the image to the API
             response = requests.post(api_url, files={'img': img_bytes})
 
